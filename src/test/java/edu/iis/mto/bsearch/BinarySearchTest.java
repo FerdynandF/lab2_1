@@ -6,7 +6,7 @@ import org.junit.Test;
 public class BinarySearchTest {
 
     private static final int ELEMENT = 3;
-    private static final int ANOTHER_ELEMENT = 5;
+    private static final int ANOTHER_ELEMENT = 10;
 
     @Test
     public void elementInSingleSequence() {
@@ -23,13 +23,19 @@ public class BinarySearchTest {
     @Test
     public void elementOnFirstPositionInSequence() {
         int[] sequence = {ELEMENT, ANOTHER_ELEMENT};
-        Assert.assertEquals(0,BinarySearch.search(ELEMENT, sequence).getPosition());
+        Assert.assertEquals(0, BinarySearch.search(ELEMENT, sequence).getPosition());
     }
 
     @Test
-    public void elementOnLastPositionInSequence(){
-        int[] sequence = {ELEMENT, ELEMENT+1, ANOTHER_ELEMENT};
-        Assert.assertEquals(2,BinarySearch.search(ANOTHER_ELEMENT, sequence).getPosition());
+    public void elementOnLastPositionInSequence() {
+        int[] sequence = {ELEMENT, ELEMENT + 1, ANOTHER_ELEMENT};
+        Assert.assertEquals(2, BinarySearch.search(ANOTHER_ELEMENT, sequence).getPosition());
+    }
+
+    @Test
+    public void elementOnMiddlePositionInSequence() {
+        int[] sequence = {ELEMENT, ELEMENT + 1, ANOTHER_ELEMENT, ANOTHER_ELEMENT + 2, ANOTHER_ELEMENT + 4};
+        Assert.assertEquals(sequence.length/2, BinarySearch.search(ANOTHER_ELEMENT, sequence).getPosition());
     }
 
 }
