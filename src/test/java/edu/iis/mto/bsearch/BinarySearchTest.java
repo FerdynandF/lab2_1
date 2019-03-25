@@ -21,9 +21,15 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementOnFirstPositionSequence() {
+    public void elementOnFirstPositionInSequence() {
         int[] sequence = {ELEMENT, ANOTHER_ELEMENT};
         Assert.assertEquals(0,BinarySearch.search(ELEMENT, sequence).getPosition());
+    }
+
+    @Test
+    public void elementOnLastPositionInSequence(){
+        int[] sequence = {ELEMENT, ELEMENT+1, ANOTHER_ELEMENT};
+        Assert.assertEquals(2,BinarySearch.search(ANOTHER_ELEMENT, sequence).getPosition());
     }
 
 }
