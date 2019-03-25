@@ -44,4 +44,12 @@ public class BinarySearchTest {
         Assert.assertEquals(-1, BinarySearch.search(ANOTHER_ELEMENT, sequence).getPosition());
     }
 
+    @Test
+    public void negativeElementInSequence() {
+        int key = -2;
+        int[] sequence = {key, key+1, ELEMENT, ANOTHER_ELEMENT};
+        Assert.assertTrue(BinarySearch.search(key,sequence).isFound());
+        Assert.assertEquals(key, sequence[BinarySearch.search(key,sequence).getPosition()]);
+    }
+
 }
